@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.5
+-- Dumped from database version 11.1
 -- Dumped by pg_dump version 11.1
 
 SET statement_timeout = 0;
@@ -393,6 +393,67 @@ CREATE TABLE ctgov.schema_migrations (
 
 
 --
+-- Name: sharable_datasets; Type: TABLE; Schema: ctgov; Owner: -
+--
+
+CREATE TABLE ctgov.sharable_datasets (
+    id integer NOT NULL,
+    dataset character varying,
+    title character varying,
+    study_type character varying,
+    start_date character varying,
+    end_date character varying,
+    therapeutic_area character varying,
+    enrollment character varying,
+    population character varying,
+    phase character varying,
+    study_description character varying,
+    data_availability character varying,
+    faculty_name character varying,
+    affiliation character varying,
+    governance character varying,
+    data_source character varying,
+    primary_dcri_contact character varying,
+    secondary_dcri_contact character varying,
+    operational_dcri_contact character varying,
+    observation_type character varying,
+    intervention_type character varying,
+    drug character varying,
+    sponsor_name character varying,
+    sponsor_type character varying,
+    randomized character varying,
+    biospecimen character varying,
+    data_location character varying,
+    control character varying,
+    blinding character varying,
+    international character varying,
+    study_population character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: sharable_datasets_id_seq; Type: SEQUENCE; Schema: ctgov; Owner: -
+--
+
+CREATE SEQUENCE ctgov.sharable_datasets_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sharable_datasets_id_seq; Type: SEQUENCE OWNED BY; Schema: ctgov; Owner: -
+--
+
+ALTER SEQUENCE ctgov.sharable_datasets_id_seq OWNED BY ctgov.sharable_datasets.id;
+
+
+--
 -- Name: use_case_attachments; Type: TABLE; Schema: ctgov; Owner: -
 --
 
@@ -686,6 +747,13 @@ ALTER TABLE ONLY ctgov.publications ALTER COLUMN id SET DEFAULT nextval('ctgov.p
 
 
 --
+-- Name: sharable_datasets id; Type: DEFAULT; Schema: ctgov; Owner: -
+--
+
+ALTER TABLE ONLY ctgov.sharable_datasets ALTER COLUMN id SET DEFAULT nextval('ctgov.sharable_datasets_id_seq'::regclass);
+
+
+--
 -- Name: use_case_attachments id; Type: DEFAULT; Schema: ctgov; Owner: -
 --
 
@@ -797,6 +865,14 @@ ALTER TABLE ONLY ctgov.public_announcements
 
 ALTER TABLE ONLY ctgov.publications
     ADD CONSTRAINT publications_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: sharable_datasets sharable_datasets_pkey; Type: CONSTRAINT; Schema: ctgov; Owner: -
+--
+
+ALTER TABLE ONLY ctgov.sharable_datasets
+    ADD CONSTRAINT sharable_datasets_pkey PRIMARY KEY (id);
 
 
 --
@@ -971,4 +1047,6 @@ INSERT INTO schema_migrations (version) VALUES ('20180813174540');
 INSERT INTO schema_migrations (version) VALUES ('20181108174440');
 
 INSERT INTO schema_migrations (version) VALUES ('20181208174440');
+
+INSERT INTO schema_migrations (version) VALUES ('20190109162240');
 

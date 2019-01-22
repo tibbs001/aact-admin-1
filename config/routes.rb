@@ -6,9 +6,12 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  get "/data_sharing"         => "data_sharing#show"
+  get 'data_sharing/show'
+
   get "/data_dictionary"      => "dictionary#show"
-  get "/activities"           => "database_activity#show"
   get 'dictionary/show'
+  get "/activities"           => "database_activity#show"
 
   get "/connect"              => "pages#connect"
   get "/download"             => "pages#download"
@@ -49,6 +52,7 @@ Rails.application.routes.draw do
   get "/tech_deploy_code"     => "faq#tech_deploy_code"
 
   resources :definitions
+  resources :sharable_datasets
   resources :users
   resources :projects
   resources :datasets
