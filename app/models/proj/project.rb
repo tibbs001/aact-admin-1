@@ -25,6 +25,18 @@ module Proj
       }
     end
 
+    def cardiovascular_studies
+      Public::Study.connection.execute("SELECT * FROM #{self.schema_name}.cardiovascular_studies")
+    end
+
+    def oncology_studies
+      Public::Study.connection.execute("SELECT * FROM #{self.schema_name}.oncology_studies")
+    end
+
+    def mental_health_studies
+      Public::Study.connection.execute("SELECT * FROM #{self.schema_name}.mental_health_studies")
+    end
+
     def publication_url
       pub = publications.first if !publications.empty?
       pub.url if pub

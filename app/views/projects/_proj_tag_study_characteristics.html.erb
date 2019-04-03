@@ -1,0 +1,109 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+
+    <p>
+      <p class="projectLabel"><%= @project.mental_health_studies.count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse %> Mental Health Studies</p>
+      <div class='downloadOptions'>
+        <p class='download'>Download:</p>
+          <%= link_to "CSV", projects_oncology_studies_path(format: "csv"), :class => 'downloadOptions' %>
+          <p class='download'>&nbsp;&nbsp;&nbsp;&nbsp;</p> <%= link_to "Excel", projects_oncology_studies_path(format: "xls"), :class => 'downloadOptions' %>
+      </div>
+
+      <div class='shadowContainer'>
+        <table id='oncologyStudies'
+           data-toolbar="#toolbar"
+           data-toggle="table"
+           data-pagination="true"
+           data-show-toggle="true"
+           data-show-columns="true"
+           data-sort-order="nct_id"
+           class='sortable table-striped table-responsive table-hover regularDisplay'>
+
+           <thead>
+              <tr>
+                <th data-field='nct_id'>NCT ID</th>
+                <th data-field='brief_title'>Brief Title</th>
+                <th data-field='lead_sponsor'>Lead Sponsor</th>
+              </tr>
+            </thead>
+
+            <tbody class='projects'>
+              <% @project.mental_health_studies.each_with_index do |s, index| %>
+                <tr id="row_<%= index %>" class="projectRow">
+                  <td><%= s['nct_id'] %></td>
+                  <td><%= s['brief_title'] %></td>
+                  <td><%= s['lead_sponsor'] %></td>
+                </tr>
+              <% end %>
+           </tbody>
+        </table>
+      </div>
+
+      <p class="projectLabel"><%= @project.oncology_studies.count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse %> Oncology Studies</p>
+      <div class='shadowContainer'>
+        <table id='oncologyStudies'
+           data-toolbar="#toolbar"
+           data-toggle="table"
+           data-pagination="true"
+           data-show-toggle="true"
+           data-show-columns="true"
+           data-sort-order="nct_id"
+           class='sortable table-striped table-responsive table-hover regularDisplay'>
+
+           <thead>
+              <tr>
+                <th data-field='nct_id'>NCT ID</th>
+                <th data-field='brief_title'>Brief Title</th>
+                <th data-field='lead_sponsor'>Lead Sponsor</th>
+              </tr>
+            </thead>
+
+            <tbody class='projects'>
+              <% @project.oncology_studies.each_with_index do |s, index| %>
+                <tr id="row_<%= index %>" class="projectRow">
+                  <td><%= s['nct_id'] %></td>
+                  <td><%= s['brief_title'] %></td>
+                  <td><%= s['lead_sponsor'] %></td>
+                </tr>
+              <% end %>
+           </tbody>
+        </table>
+
+      </div>
+      <p class="projectLabel"><%= @project.cardiovascular_studies.count.to_s.reverse.gsub(/...(?=.)/,'\&,').reverse %> Cardiovascular Studies</p>
+      <div class='shadowContainer'>
+        <table id='cardiovascularStudies'
+           data-toolbar="#toolbar"
+           data-toggle="table"
+           data-pagination="true"
+           data-show-toggle="true"
+           data-show-columns="true"
+           data-sort-order="nct_id"
+           class='sortable table-striped table-responsive table-hover regularDisplay'>
+
+           <thead>
+              <tr>
+                <th data-field='nct_id'>NCT ID</th>
+                <th data-field='brief_title'>Brief Title</th>
+                <th data-field='lead_sponsor'>Lead Sponsor</th>
+              </tr>
+            </thead>
+
+            <tbody class='projects'>
+              <% @project.cardiovascular_studies.each_with_index do |s, index| %>
+                <tr id="row_<%= index %>" class="projectRow">
+                  <td><%= s['nct_id'] %></td>
+                  <td><%= s['brief_title'] %></td>
+                  <td><%= s['lead_sponsor'] %></td>
+                </tr>
+              <% end %>
+           </tbody>
+        </table>
+        </table>
+
+      </div>
+    <p>
+

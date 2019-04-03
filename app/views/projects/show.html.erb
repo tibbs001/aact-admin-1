@@ -110,6 +110,8 @@
       <p><%= @project.contact_info %></p>
     <% end %>
 
+    <%= render @project.schema_name %>
+
     <p>
       </br>
       <a href="/projects#projectTable" class='btn btn-projects btn-primary'>Return to list of projects...</a>
