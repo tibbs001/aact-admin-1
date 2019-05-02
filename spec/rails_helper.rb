@@ -3,11 +3,6 @@ ENV["RACK_ENV"] = "test"
 ENV["RAILS_ENV"] = "test"
 
 require File.expand_path("../../config/environment", __FILE__)
-abort("AACT_ADMIN_DATABASE_URL environment variable is set")   if !ENV["AACT_ADMIN_DATABASE_URL"]
-abort("AACT_BACK_DATABASE_URL environment variable is set")    if !ENV["AACT_BACK_DATABASE_URL"]
-abort("AACT_PUBLIC_DATABASE_URL environment variable is set")  if !ENV["AACT_PUBLIC_DATABASE_URL"]
-abort("AACT_PUBLIC_HOSTNAME environment variable is set")      if !ENV["AACT_PUBLIC_HOSTNAME"]
-abort("AACT_PUBLIC_DATABASE_NAME environment variable is set") if !ENV["AACT_PUBLIC_DATABASE_NAME"]
 abort("AACT_DB_SUPER_USERNAME environment variable is set")    if !ENV["AACT_DB_SUPER_USERNAME"]
 
 require "rspec/rails"
@@ -49,9 +44,9 @@ RSpec.configure do |config|
     Public::PublicBase.establish_connection(
       adapter: 'postgresql',
       encoding: 'utf8',
-      hostname: ENV['AACT_PUBLIC_HOSTNAME'],
-      database: ENV['AACT_PUBLIC_DATABASE_NAME'],
-      username: ENV['AACT_DB_SUPER_USERNAME'])
+      hostname: 'localhost',
+      database: 'aact',
+      username: AACT::Application::AACT_DB_SUPER_USERNAME
     @dbconfig = YAML.load(File.read('config/database.yml'))
     ActiveRecord::Base.establish_connection @dbconfig[:test]
   end

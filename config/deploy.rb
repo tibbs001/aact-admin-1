@@ -46,7 +46,7 @@ set :format_options, command_output: true, log_file: "log/capistrano.log", color
 set :default_env, {
   'PATH' => "/home/ctti-aact/bin/:/srv/web/aact.ctti-clinicaltrials.org/shared/bundle/ruby/2.4.0/bin:/opt/rh/rh-ruby24/root/usr/lib64:$PATH",
   'LD_LIBRARY_PATH' => "/opt/rh/rh-ruby24/root/usr/lib64",
-  'APPLICATION_HOST' => ENV['APPLICATION_HOST'],
+  'APPLICATION_HOST' => AACT::Application::APPLICATION_HOST,
   'RUBY_VERSION' => 'ruby 2.4.0',
   'GEM_HOME' => '/home/ctti-aact/.gem/ruby',
   'GEM_PATH' => '/home/ctti-aact/.gem/ruby/gems:/opt/rh/rh-ruby24/root/usr/share/gems:/opt/rh/rh-ruby24/root/usr/local/share/gems:/opt/rh/rh-ruby24/root/usr/lib64'
