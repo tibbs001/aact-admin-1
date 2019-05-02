@@ -40,7 +40,7 @@ gem 'roo', '~> 2.4.0'
 gem 'string-similarity'
 gem 'gon'
 gem 'execjs'
-#gem 'therubyracer', '~> 0.12.3'
+gem 'therubyracer', '~> 0.12.3'
 gem 'libv8', '~> 3.16.14.15'
 gem "loofah", ">= 2.2.3"
 gem 'rack'
