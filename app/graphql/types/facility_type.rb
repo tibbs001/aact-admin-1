@@ -6,6 +6,6 @@ module Types
     field :state, String, null: true
     field :zip, String, null: true
     field :country, String, null: true
-    field :studies, [Types::StudyType], null: true
+    field :study, Types::StudyType, null: true
   end
 end

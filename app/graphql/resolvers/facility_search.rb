@@ -30,12 +30,11 @@ class Resolvers::FacilitySearch
 
   def normalize_filters(value, branches = [])
     scope = Ctgov::Facility.all
-    #scope = scope.like(:brief_title, value[:title_contains]) if value[:title_contains]
-    scope = scope.where('lower(name) like ?', "%#{value[:name]}%") if value[:name]
-    scope = scope.where('lower(city) like ?', "%#{value[:city]}%") if value[:city]
-    scope = scope.where('lower(state) like ?', "%#{value[:state]}%") if value[:state]
-    scope = scope.where('lower(zip) like ?', "%#{value[:zip]}%") if value[:zip]
-    scope = scope.where('lower(country) like ?', "%#{value[:country]}%") if value[:country]
+    scope = scope.where('lower(name) like ?', "%#{value[:name].downcase}%")       if value[:name]
+    scope = scope.where('lower(city) like ?', "%#{value[:city].downcase}%")       if value[:city]
+    scope = scope.where('lower(state) like ?', "%#{value[:state].downcase}%")     if value[:state]
+    scope = scope.where('lower(zip) like ?', "%#{value[:zip].downcase}%")         if value[:zip]
+    scope = scope.where('lower(country) like ?', "%#{value[:country].downcase}%") if value[:country]
 
     branches << scope
 
