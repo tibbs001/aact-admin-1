@@ -7,6 +7,7 @@ module Types
     # They will be entry points for queries on your schema.
     field :studies, function: Resolvers::StudiesSearch
     field :facility, function: Resolvers::FacilitySearch
+    field :keyword, function: Resolvers::KeywordSearch
 
     field :study, Types::StudyType, null: true do
       description 'Find a study by NCT ID'
