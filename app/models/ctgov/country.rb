@@ -1,4 +1,4 @@
 module Ctgov
-class Country < StudyRelationship
-end
+  class Country < StudyRelationship
+  end
 end

@@ -6,6 +6,7 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
     field :studies, function: Resolvers::StudiesSearch
+    field :facility, function: Resolvers::FacilitySearch
 
     field :study, Types::StudyType, null: true do
       description 'Find a study by NCT ID'
@@ -18,7 +19,7 @@ module Types
     end
 
     field :country, [Types::CountryType], null: true do
-      description 'Find  '
+      description 'Find studies by country.'
       argument :name, String, required: false
     end
 
