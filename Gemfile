@@ -2,6 +2,11 @@ source "https://rubygems.org"
 
 ruby "2.4.5"
 
+gem 'graphql'
+gem 'graphiql-rails'
+gem 'search_object', '1.2.0'
+gem 'search_object_graphql', '0.1'
+
 gem 'bootstrap'
 gem "bootstrap-table-rails"
 gem 'nokogiri', '~> 1.8.1'
