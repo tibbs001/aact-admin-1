@@ -14,6 +14,11 @@ module Types
       argument :nctId, String, required: false
     end
 
+    field :anatomic_site, [Types::AnatomicSiteType], null: true do
+      description 'Find studies by anatomic site'
+      argument :name, String, required: false
+    end
+
     field :condition, [Types::ConditionType], null: true do
       description 'Find studies for a condition'
       argument :name, String, required: false
@@ -36,6 +41,10 @@ module Types
 
     def study(nct_id:)
       Ctgov::Study.where('nct_id =?', nct_id).first
+    end
+
+    def anatomic_site(name:)
+      Nci::AnatomicSite.where('lower(name) like ?', "%#{name.downcase}%")
     end
 
     def condition(name:)
