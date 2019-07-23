@@ -27,6 +27,7 @@ module Types
     field :design_outcomes,                  [Types::DesignOutcomeType], null: true
     field :facilities,                       [Types::FacilityType], null: true
     field :interventions,                    [Types::InterventionType], null: true
+    field :milestones,                       [Types::MilestoneType], null: true
     field :outcomes,                         [Types::OutcomeType], null: true
     field :reported_events,                  [Types::ReportedEventType], null: true
     field :sponsors,                         [Types::SponsorType], null: true

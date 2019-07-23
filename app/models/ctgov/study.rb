@@ -6,6 +6,7 @@ module Ctgov
     has_many :design_outcomes, :foreign_key => 'nct_id'
     has_many :facilities,      :foreign_key => 'nct_id'
     has_many :interventions,   :foreign_key => 'nct_id'
+    has_many :milestones,      :foreign_key => 'nct_id'
     has_many :outcomes,        :foreign_key => 'nct_id'
     has_many :reported_events, :foreign_key => 'nct_id'
     has_many :sponsors,        :foreign_key => 'nct_id'
