@@ -24,8 +24,11 @@ module Types
     field :why_stopped,                      String, null: true
     field :conditions,                       [Types::ConditionType], null: true
     field :countries,                        [Types::CountryType], null: true
+    field :design_outcomes,                  [Types::DesignOutcomeType], null: true
     field :facilities,                       [Types::FacilityType], null: true
     field :interventions,                    [Types::InterventionType], null: true
+    field :outcomes,                         [Types::OutcomeType], null: true
+    field :reported_events,                  [Types::ReportedEventType], null: true
     field :sponsors,                         [Types::SponsorType], null: true
     field :has_dmc,                          Boolean, null: true
     field :is_fda_regulated_drug,            Boolean, null: true
