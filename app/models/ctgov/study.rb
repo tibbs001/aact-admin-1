@@ -10,5 +10,6 @@ module Ctgov
     has_many :outcomes,        :foreign_key => 'nct_id'
     has_many :reported_events, :foreign_key => 'nct_id'
     has_many :sponsors,        :foreign_key => 'nct_id'
+    has_many :study_references, :foreign_key => 'nct_id'
   end
 end
