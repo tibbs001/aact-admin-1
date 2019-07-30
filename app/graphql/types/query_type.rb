@@ -5,9 +5,10 @@ module Types
 
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
-    field :studies, function: Resolvers::StudiesSearch
+    field :design,   function: Resolvers::DesignSearch
     field :facility, function: Resolvers::FacilitySearch
-    field :keyword, function: Resolvers::KeywordSearch
+    field :keyword,  function: Resolvers::KeywordSearch
+    field :studies,  function: Resolvers::StudiesSearch
 
     field :study, Types::StudyType, null: true do
       description 'Find a study by NCT ID'

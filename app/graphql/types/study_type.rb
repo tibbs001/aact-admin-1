@@ -45,6 +45,7 @@ module Types
     field :source,                           String, null: true
     field :conditions,                       [Types::ConditionType], null: true
     field :countries,                        [Types::CountryType], null: true
+    field :designs,                          [Types::DesignType], null: true
     field :design_outcomes,                  [Types::DesignOutcomeType], null: true
     field :facilities,                       [Types::FacilityType], null: true
     field :interventions,                    [Types::InterventionType], null: true
