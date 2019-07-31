@@ -43,6 +43,7 @@ module Types
     field :why_stopped,                      String, null: true
     field :limitations_and_caveats,          String, null: true
     field :source,                           String, null: true
+    field :baseline_counts,                  [Types::BaselineCountType], null: true
     field :conditions,                       [Types::ConditionType], null: true
     field :countries,                        [Types::CountryType], null: true
     field :designs,                          [Types::DesignType], null: true
@@ -52,6 +53,7 @@ module Types
     field :milestones,                       [Types::MilestoneType], null: true
     field :outcomes,                         [Types::OutcomeType], null: true
     field :reported_events,                  [Types::ReportedEventType], null: true
+    field :result_groups,                    [Types::ResultGroupType], null: true
     field :sponsors,                         [Types::SponsorType], null: true
     field :study_reference_types,            [Types::StudyReferenceType], null: true
     field :has_dmc,                          Boolean, null: true

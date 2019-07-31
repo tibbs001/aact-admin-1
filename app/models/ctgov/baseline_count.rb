@@ -1,5 +1,5 @@
 module Ctgov
-  class ReportedEvent < StudyRelationship
+  class BaselineCount < StudyRelationship
     belongs_to :result_group
   end
 end
