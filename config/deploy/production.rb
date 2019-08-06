@@ -41,7 +41,7 @@
   set :repo_url, ENV['AACT_ADMIN_PROD_REPO_URL']
   set :deploy_to, ENV['AACT_ADMIN_PROD_DEPLOY_TO']
   set :ssh_options, {
-    keys: %w("/home/tibbs001/.ssh/id_rsa"),
+    keys: %w("/home/tibbs001/.ssh/id_rsa")
     forward_agent: false,
     auth_methods: %w(publickey)
   }
