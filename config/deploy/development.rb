@@ -45,8 +45,8 @@
    roles: %w{web app},
    ssh_options: {
      #user: "#{ENV['AACT_SERVER_USERNAME']}",
-     user: 'rails'
-     keys: %w("/home/rails/.ssh/id_rsa")
+     user: 'rails',
+     keys: %w("/home/rails/.ssh/id_rsa"),
      forward_agent: false,
      auth_methods: %w(publickey)
    }
