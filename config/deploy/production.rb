@@ -41,18 +41,18 @@
   set :repo_url, ENV['AACT_ADMIN_PROD_REPO_URL']
   set :deploy_to, ENV['AACT_ADMIN_PROD_DEPLOY_TO']
   set :ssh_options, {
-    keys: %w("#{ENV['AACT_SSH_KEY_DIR']}"),
+    keys: %w("/home/tibbs001/.ssh/id_rsa"),
     forward_agent: false,
     auth_methods: %w(publickey)
   }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
- server "#{ENV['AACT_PROD_SERVER']}",
+ server "159.89.54.108",
    roles: %w{web app},
    ssh_options: {
      user: "#{ENV['AACT_SERVER_USERNAME']}",
-     keys: %w("#{ENV['AACT_SSH_KEY_DIR']}"),
+     keys: %w("/home/tibbs001/.ssh/id_rsa"),
      forward_agent: false,
      auth_methods: %w(publickey)
    }
