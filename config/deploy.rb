@@ -16,13 +16,9 @@ desc 'Finalize the deployment'
 task :finish_up do
   on roles(:app) do
     # create symlink to to the root directory containing aact static files
-    # content of this directory can get big; we create this directory on a separate NAS drive
-    target = release_path.join('public/static')
     source = ENV.fetch('AACT_STATIC_FILE_DIR','/aact-files')
-
+    target = release_path.join('public/static')
     execute :ln, '-s', source, target
-    # restart the website
-    execute :touch, release_path.join('tmp/restart.txt')
   end
 end
 
@@ -47,7 +43,7 @@ set :format_options, command_output: true, log_file: "#{ENV.fetch('AACT_STATIC_F
 # Default value for default_env is {}
 
 set :default_env, {
-  'PATH' => '/usr/local/pgsql/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/tibbs001/bin:/usr/local/share',
+  'PATH'             => ENV['AACT_PATH'],
   'LD_LIBRARY_PATH' => ENV['LD_LIBRARY_PATH'],
   'APPLICATION_HOST' => 'localhost',
   'RUBY_VERSION' =>  'ruby 2.4.5',
