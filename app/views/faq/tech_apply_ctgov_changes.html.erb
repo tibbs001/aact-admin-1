@@ -23,9 +23,9 @@
       <tr><td>AACT_ADMIN_DATABASE_NAME</td><td>aact_admin</td><td>Name of database used to support the AACT website</td></tr>
       <tr><td>AACT_PROJ_DATABASE_NAME</td><td>aact_proj</td><td>Name of database used to prepare AACT project data before it is pushed to the public db.</td></tr>
       <tr><td>AACT_PUBLIC_DATABASE_NAME</td><td>aact</td><td>Name of database available to the public</td></tr>
-      <tr><td>AACT_OWNER_EMAIL</td><td>AACT <aact@ctti-clinicaltrials.org></td><td>Name of email acct from which notifications are sent. (Don't define this if your email service is not setup.)</td></tr>
-      <tr><td>AACT_ADMIN_EMAILS</td><td>sheri.tibbs@duke.edu,ctti-aact@duke.edu</td><td>Email addresses that will receive load notifications.</td></tr>
-      <tr><td>AACT_ADMIN_USERNAMES</td><td>tibbs001,tibbs002,chisw001,calve002,cttiaact,karenchiswell</td><td>AACT website usernames that have access to restricted pages such as the list of users, tech documentation, etc.</tr>
+      <tr><td>AACT_OWNER_EMAIL</td><td><%= ENV['AACT_OWNER_EMAIL'] %></td><td>Name of email acct from which notifications are sent. (Don't define this if your email service is not setup.)</td></tr>
+      <tr><td>AACT_ADMIN_EMAILS</td><td<%= ENV['AACT_ADMIN_EMAILS'] %></td><td>Email addresses that will receive load notifications.</td></tr>
+      <tr><td>AACT_ADMIN_USERNAMES</td><td><%= ENV['AACT_ADMIN_USERNAMES'] %></td><td>AACT website usernames that have access to restricted pages such as the list of users, tech documentation, etc.</tr>
       <tr><td>AACT_ADMIN_DIR</td><td>/srv/web/aact.ctti-clinicaltrials.org/current/</td><td>Directory where AACT admin app resides on server.  Used by scripts that track user activity.</tr>
       <tr><td>AACT_STATIC_FILE_DIR</td><td>/aact-files</td><td>Directory containing AACT static files such as the downloadable db snapshots, documentation, xml download from ClinicalTrials.gov, logs, etc. </tr>
       <tr><td>SEGMENT_KEY</td><td>nil</td><td>Used by Google Analytics</tr>
